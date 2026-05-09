@@ -168,6 +168,38 @@ a {
     align-items: stretch;
 }
 
+.hero-rocket-center {
+    position: absolute;
+    left: 50%;
+    top: 56%;
+    transform: translate(-50%, -50%) scale(0.36);
+    transform-origin: center;
+    width: 150px;
+    height: 390px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+.hero-rocket-center .rocket {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: rotate(6deg);
+    animation: rocket-center-float 5.5s ease-in-out infinite;
+}
+
+@keyframes rocket-center-float {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(6deg);
+    }
+
+    50% {
+        transform: translateY(-16px) rotate(3deg);
+    }
+}
+
 .hero-logo-stack {
     --wordmark-offset: 110px;
     position: relative;
@@ -262,6 +294,129 @@ h1 {
     color: var(--muted);
     font-size: 13px;
     font-weight: 700;
+}
+
+.trailer-card {
+    align-self: start;
+    padding: 18px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06)),
+        radial-gradient(circle at 50% 12%, rgba(255, 95, 183, 0.2), transparent 42%);
+    box-shadow: var(--shadow);
+}
+
+.trailer-head {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(10, 5, 15, 0.6);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--pink-2);
+}
+
+.trailer-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 16px var(--green);
+}
+
+.trailer-frame-wrap {
+    margin-top: 14px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(0, 0, 0, 0.24);
+}
+
+.trailer-frame-wrap iframe {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.trailer-note {
+    margin: 12px 4px 4px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.trailer-carousel {
+    position: relative;
+    margin-top: 14px;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-viewport {
+    border-radius: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 260ms ease;
+}
+
+.carousel-slide {
+    flex: 0 0 100%;
+    min-height: 120px;
+}
+
+.carousel-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    background: rgba(10, 5, 15, 0.82);
+    color: var(--text);
+    font-size: 25px;
+    line-height: 1;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: transform 180ms ease, background 180ms ease;
+}
+
+.carousel-btn:hover {
+    transform: translateY(-50%) scale(1.04);
+    background: rgba(18, 9, 25, 0.95);
+}
+
+.carousel-btn-prev {
+    left: 8px;
+}
+
+.carousel-btn-next {
+    right: 8px;
 }
 
 .ship-card {
@@ -786,6 +941,14 @@ footer {
     .features {
         grid-template-columns: 1fr;
     }
+
+    .trailer-card {
+        max-width: 760px;
+    }
+
+    .hero-rocket-center {
+        display: none;
+    }
 }
 
 @media (max-width: 680px) {
@@ -802,9 +965,9 @@ footer {
     }
 
     .hero-logo-stack {
-        --wordmark-offset: 120px;
+        --wordmark-offset: 82px;
         width: min(100%, 320px);
-        margin-bottom: calc(14px + var(--wordmark-offset));
+        margin: 0 auto calc(14px + var(--wordmark-offset));
     }
 
     .hero-wordmark {
@@ -812,7 +975,14 @@ footer {
     }
 
     .hero-emblem-overlay {
+        top: 56%;
         width: clamp(62px, 20vw, 86px);
+    }
+
+    .carousel-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 22px;
     }
 
     .stats {
