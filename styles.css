@@ -1,12 +1,12 @@
 :root {
-    --bg: #140819;
-    --bg-2: #24102f;
+    --bg: #0f0905;
+    --bg-2: #181109;
     --panel: rgba(255, 255, 255, 0.08);
     --panel-strong: rgba(255, 255, 255, 0.14);
     --text: #fff7fb;
     --muted: #d8c6df;
-    --pink: #ff5fb7;
-    --pink-2: #ff8bd0;
+    --pink: #e27a3a;
+    --pink-2: #f0a767;
     --yellow: #ffd166;
     --cyan: #7bdff2;
     --green: #9cffcb;
@@ -32,10 +32,10 @@ body {
     font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     color: var(--text);
     background:
-        radial-gradient(circle at 15% 12%, rgba(255, 95, 183, 0.38), transparent 30%),
+        radial-gradient(circle at 15% 12%, rgba(226, 122, 58, 0.24), transparent 30%),
         radial-gradient(circle at 80% 10%, rgba(123, 223, 242, 0.22), transparent 34%),
         radial-gradient(circle at 50% 92%, rgba(255, 209, 102, 0.14), transparent 30%),
-        linear-gradient(180deg, var(--bg), #0b0710 62%, #050307);
+        linear-gradient(180deg, var(--bg), #0d0805 62%, #050303);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -69,8 +69,8 @@ a {
     top: 0;
     z-index: 50;
     backdrop-filter: blur(18px);
-    background: rgba(20, 8, 25, 0.72);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(16, 11, 7, 0.82);
+    border-bottom: 1px solid rgba(214, 140, 84, 0.16);
 }
 
 .nav-inner {
@@ -248,7 +248,7 @@ h1 {
 }
 
 .gradient-text {
-    background: linear-gradient(135deg, #fff, #ffd1ea 35%, #ff5fb7 70%, #ffd166);
+    background: linear-gradient(135deg, #fff, #ffe3b8 35%, #ff8a3d 70%, #ffd166);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -707,8 +707,56 @@ section {
     align-items: stretch;
 }
 
+.platforms-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 16px;
+    align-items: stretch;
+}
+
 .panel {
     padding: 26px;
+}
+
+.platforms-intro .section-head {
+    margin-bottom: 18px;
+}
+
+.platform-cards {
+    display: grid;
+    gap: 16px;
+}
+
+.platform-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.07);
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.18);
+    padding: 24px;
+}
+
+.platform-icon {
+    width: 50px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255, 95, 183, 0.95), rgba(255, 209, 102, 0.9));
+    color: #190719;
+    font-size: 24px;
+    margin-bottom: 14px;
+}
+
+.platform-card h3 {
+    margin: 0 0 8px;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+}
+
+.platform-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.6;
 }
 
 .steps {
@@ -930,7 +978,8 @@ footer {
 @media (max-width: 920px) {
 
     .hero-grid,
-    .gameplay-grid {
+    .gameplay-grid,
+    .platforms-grid {
         grid-template-columns: 1fr;
     }
 
