@@ -168,12 +168,27 @@ a {
     align-items: center;
 }
 
+.hero-logo-stack {
+    position: relative;
+    width: min(100%, 460px);
+    margin: 0 0 18px;
+}
+
 .hero-wordmark {
     display: block;
-    width: min(100%, 460px);
+    width: 100%;
     height: auto;
-    margin: 0 0 18px;
     filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.3));
+}
+
+.hero-emblem-overlay {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: clamp(78px, 12vw, 124px);
+    height: auto;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
 }
 
 .eyebrow {
@@ -783,9 +798,17 @@ footer {
         padding-top: 54px;
     }
 
-    .hero-wordmark {
+    .hero-logo-stack {
         width: min(100%, 320px);
         margin-bottom: 14px;
+    }
+
+    .hero-wordmark {
+        width: 100%;
+    }
+
+    .hero-emblem-overlay {
+        width: clamp(62px, 20vw, 86px);
     }
 
     .stats {
