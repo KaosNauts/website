@@ -169,15 +169,17 @@ a {
 }
 
 .hero-logo-stack {
+    --wordmark-offset: 110px;
     position: relative;
     width: min(100%, 460px);
-    margin: 0 0 18px;
+    margin: 0 0 calc(18px + var(--wordmark-offset));
 }
 
 .hero-wordmark {
     display: block;
     width: 100%;
     height: auto;
+    transform: translateY(var(--wordmark-offset));
     filter: drop-shadow(0 12px 26px rgba(0, 0, 0, 0.3));
 }
 
@@ -799,8 +801,9 @@ footer {
     }
 
     .hero-logo-stack {
+        --wordmark-offset: 120px;
         width: min(100%, 320px);
-        margin-bottom: 14px;
+        margin-bottom: calc(14px + var(--wordmark-offset));
     }
 
     .hero-wordmark {
