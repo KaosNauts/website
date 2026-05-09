@@ -158,50 +158,28 @@ a {
 
 .hero {
     position: relative;
-    padding: 82px 0 70px;
 }
 
 .hero-grid {
     display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
+    grid-template-columns: 0.9fr 1.1fr;
     gap: 42px;
-    align-items: stretch;
+    align-items: center;
 }
 
-.hero-rocket-center {
-    position: absolute;
-    left: 50%;
-    top: 56%;
-    transform: translate(-50%, -50%) scale(0.36);
-    transform-origin: center;
-    width: 150px;
-    height: 390px;
-    pointer-events: none;
-    z-index: 3;
+.hero-brand-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
 }
 
-.hero-rocket-center .rocket {
-    position: relative;
-    left: auto;
-    top: auto;
-    transform: rotate(6deg);
-    animation: rocket-center-float 5.5s ease-in-out infinite;
-}
-
-@keyframes rocket-center-float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(6deg);
-    }
-
-    50% {
-        transform: translateY(-16px) rotate(3deg);
-    }
+.hero-copy-column {
+    max-width: 740px;
 }
 
 .hero-logo-stack {
-    --wordmark-offset: 110px;
+    --wordmark-offset: 82px;
     position: relative;
     width: min(100%, 460px);
     margin: 0 0 calc(18px + var(--wordmark-offset));
@@ -277,6 +255,29 @@ h1 {
     max-width: 650px;
 }
 
+.platform-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 0;
+}
+
+.hero-brand-column .hero-actions {
+    margin-top: 2px;
+}
+
+.platform-badge {
+    padding: 8px 12px;
+    border-radius: 999px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
 .stat {
     padding: 18px;
     border: 1px solid var(--border);
@@ -307,6 +308,10 @@ h1 {
     box-shadow: var(--shadow);
 }
 
+.trailer-wide {
+    margin-top: 18px;
+}
+
 .trailer-head {
     display: inline-flex;
     align-items: center;
@@ -330,26 +335,8 @@ h1 {
     box-shadow: 0 0 16px var(--green);
 }
 
-.trailer-frame-wrap {
-    margin-top: 14px;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 18px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    background: rgba(0, 0, 0, 0.24);
-}
-
-.trailer-frame-wrap iframe {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border: 0;
-}
-
 .trailer-note {
-    margin: 12px 4px 4px;
+    margin: 12px 4px 0;
     color: var(--muted);
     font-size: 14px;
     line-height: 1.45;
@@ -358,9 +345,6 @@ h1 {
 .trailer-carousel {
     position: relative;
     margin-top: 14px;
-    max-width: 640px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .carousel-viewport {
@@ -378,13 +362,22 @@ h1 {
 .carousel-slide {
     flex: 0 0 100%;
     min-height: 120px;
+    display: block;
 }
 
+.carousel-slide iframe,
 .carousel-slide img {
     display: block;
     width: 100%;
-    height: 100%;
     aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.carousel-slide iframe {
+    background: #000;
+}
+
+.carousel-slide img {
     object-fit: cover;
 }
 
@@ -417,6 +410,42 @@ h1 {
 
 .carousel-btn-next {
     right: 8px;
+}
+
+.carousel-thumbs {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.carousel-thumb {
+    height: 100px;
+    min-height: 54px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.carousel-thumb img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: 54px;
+    object-fit: cover;
+}
+
+.carousel-thumb.is-active {
+    border-color: var(--pink-2);
+    box-shadow: 0 0 0 2px rgba(240, 167, 103, 0.16);
 }
 
 .ship-card {
@@ -700,34 +729,13 @@ section {
     line-height: 1.6;
 }
 
-.gameplay-grid {
+.faq-grid {
     display: grid;
-    grid-template-columns: 0.9fr 1.1fr;
-    gap: 16px;
-    align-items: stretch;
-}
-
-.platforms-grid {
-    display: grid;
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: 16px;
-    align-items: stretch;
-}
-
-.panel {
-    padding: 26px;
-}
-
-.platforms-intro .section-head {
-    margin-bottom: 18px;
-}
-
-.platform-cards {
-    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
-.platform-card {
+.faq-item {
     border: 1px solid var(--border);
     border-radius: var(--radius-xl);
     background: rgba(255, 255, 255, 0.07);
@@ -735,28 +743,27 @@ section {
     padding: 24px;
 }
 
-.platform-icon {
-    width: 50px;
-    height: 50px;
-    display: grid;
-    place-items: center;
-    border-radius: 14px;
-    background: linear-gradient(135deg, rgba(255, 95, 183, 0.95), rgba(255, 209, 102, 0.9));
-    color: #190719;
-    font-size: 24px;
-    margin-bottom: 14px;
-}
-
-.platform-card h3 {
-    margin: 0 0 8px;
-    font-size: 22px;
+.faq-item h3 {
+    margin: 0 0 10px;
+    font-size: 20px;
     letter-spacing: -0.02em;
 }
 
-.platform-card p {
+.faq-item p {
     margin: 0;
     color: var(--muted);
     line-height: 1.6;
+}
+
+.gameplay-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 16px;
+    align-items: stretch;
+}
+
+.panel {
+    padding: 26px;
 }
 
 .steps {
@@ -979,7 +986,7 @@ footer {
 
     .hero-grid,
     .gameplay-grid,
-    .platforms-grid {
+    .faq-grid {
         grid-template-columns: 1fr;
     }
 
@@ -992,11 +999,7 @@ footer {
     }
 
     .trailer-card {
-        max-width: 760px;
-    }
-
-    .hero-rocket-center {
-        display: none;
+        max-width: 100%;
     }
 }
 
@@ -1010,13 +1013,17 @@ footer {
     }
 
     .hero {
-        padding-top: 54px;
+        padding-top: 0px;
     }
 
     .hero-logo-stack {
-        --wordmark-offset: 82px;
+        --wordmark-offset: 72px;
         width: min(100%, 320px);
         margin: 0 auto calc(14px + var(--wordmark-offset));
+    }
+
+    .hero-brand-column {
+        align-items: center;
     }
 
     .hero-wordmark {
