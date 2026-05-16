@@ -7,8 +7,11 @@
 :root {
     --font-display: "Worst Paint Job Ever", ui-sans-serif, system-ui, sans-serif;
     --font-body: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    --bg: #0f0905;
-    --bg-2: #181109;
+    --bg: #080504;
+    --bg-2: #120a06;
+    --paint-rust: #c45a28;
+    --paint-ember: #8a3a1c;
+    --paint-void: #050302;
     --panel: rgba(255, 255, 255, 0.08);
     --panel-strong: rgba(255, 255, 255, 0.14);
     --text: #fff7fb;
@@ -41,27 +44,31 @@ body {
     font-weight: 400;
     letter-spacing: 0.05em;
     color: var(--text);
-    background:
-        radial-gradient(circle at 15% 12%, rgba(226, 122, 58, 0.24), transparent 30%),
-        radial-gradient(circle at 80% 10%, rgba(123, 223, 242, 0.22), transparent 34%),
-        radial-gradient(circle at 50% 92%, rgba(255, 209, 102, 0.14), transparent 30%),
-        linear-gradient(180deg, var(--bg), #0d0805 62%, #050303);
+    background-color: var(--paint-void);
+    background-image: url("./space.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
+/* Soft vignette so text stays readable over the artwork */
 body::before {
     content: "";
     position: fixed;
     inset: 0;
+    z-index: 0;
     pointer-events: none;
-    background-image:
-        radial-gradient(circle, rgba(255, 255, 255, 0.9) 0 1px, transparent 1.5px),
-        radial-gradient(circle, rgba(255, 255, 255, 0.45) 0 1px, transparent 1.4px);
-    background-size: 80px 80px, 130px 130px;
-    background-position: 0 0, 38px 52px;
-    opacity: 0.22;
-    mask-image: linear-gradient(to bottom, black 0%, transparent 82%);
+    background:
+        linear-gradient(180deg, rgba(5, 3, 2, 0.35) 0%, transparent 28%, transparent 72%, rgba(5, 3, 2, 0.5) 100%),
+        linear-gradient(90deg, rgba(5, 3, 2, 0.25) 0%, transparent 22%, transparent 78%, rgba(5, 3, 2, 0.2) 100%);
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
 }
 
 a {
