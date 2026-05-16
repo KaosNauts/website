@@ -245,7 +245,7 @@ b {
 
 h1 {
     margin: 22px 0 18px;
-    font-size: clamp(48px, 8vw, 92px);
+    font-size: 76px;
     line-height: 0.92;
     letter-spacing: 0.05em;
 }
