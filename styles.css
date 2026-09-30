@@ -410,7 +410,8 @@ h1 {
 }
 
 .carousel-slide img {
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
 }
 
 .carousel-btn {
