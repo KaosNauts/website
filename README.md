@@ -2,6 +2,16 @@
 
 Static site published from `main` by GitHub Pages. No runtime dependencies.
 
+## Typography
+
+Headings use the project's own locally hosted fonts: `KaosNauts Gouache` for h2
+and `KaosNauts` for h3, through `typography.css`. Body text, navigation and the
+small hero tagline keep their existing reading fonts. Japanese headings retain
+the Japanese font stack: the JP painted specimen does not cover full sentences.
+Fonts use `font-display: swap`, with system fallback for missing glyphs.
+`fonts/provenance.json` identifies the source commit and SHA-256 of both TTFs
+from `KaosNauts/kaosnauts-resource`; update those records when replacing the files.
+
 ## Edit and translate
 
 - Shared markup: `site/template.html`.
