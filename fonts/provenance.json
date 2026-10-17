@@ -1,0 +1,15 @@
+{
+  "sourceRepository": "KaosNauts/kaosnauts-resource",
+  "sourceCommit": "439dcc1cf7f4142abd01cb593c55165e8d12b3cf",
+  "sourceDirectory": "packs/kaosnauts-core/ui/fonts",
+  "fonts": [
+    {
+      "file": "KaosNauts-Regular.ttf",
+      "sha256": "f6b0b922ba391851b693427bb8d47415935d918b458f07130052bc379b72e92e"
+    },
+    {
+      "file": "KaosNauts-Gouache-Regular.ttf",
+      "sha256": "fc84ba9c2ab19a941ea4b40d6e6dbe8490d6b6f948037b76d7b13f96ab74df4e"
+    }
+  ]
+}
