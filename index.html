@@ -1,238 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description"
-        content="KaosNauts is an indie online co-op space engineering game about building rockets, launching missions, and surviving orbital chaos together." />
-    <meta name="theme-color" content="#ff5fb7" />
-
-    <meta property="og:title" content="KaosNauts — Online Co-op Space Engineering" />
-    <meta property="og:description"
-        content="Build rockets. Launch together. Fail spectacularly. KaosNauts is an indie online co-op space engineering game." />
+    <meta name="description" content="Build rockets. Brave the chaos together. KaosNauts is an indie online co-op space engineering game." />
+    <meta name="theme-color" content="#030613" />
+    <meta property="og:title" content="KaosNauts — Build. Launch. Together." />
+    <meta property="og:description" content="Your rocket. Your crew. One very unpredictable mission. Discover KaosNauts, an indie online co-op space game." />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="./preview.png" />
-
+    <meta property="og:image" content="https://kaosnauts.com/images/launch-site-gouache.png" />
     <title>KaosNauts — Online Co-op Space Engineering</title>
-
     <link rel="icon" href="./favicon.ico" sizes="any" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="./favicon-96x96.png" type="image/png" sizes="96x96" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=visual-20261017" />
     <link rel="stylesheet" href="./brand-background.css" />
 </head>
-
 <body>
+    <a class="skip-link" href="#top">Skip to content</a>
     <div class="meteor-field" aria-hidden="true">
-        <span class="meteor"></span>
-        <span class="meteor"></span>
-        <span class="meteor"></span>
-        <span class="meteor"></span>
-        <span class="meteor"></span>
+        <span class="meteor"></span><span class="meteor"></span><span class="meteor"></span>
+        <span class="meteor"></span><span class="meteor"></span>
     </div>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
         <div class="container nav-inner">
-            <a class="brand" href="#top" aria-label="KaosNauts home">
-                <img class="brand-wordmark" src="./KaosNauts.png?v=painted-20261017"
-                    alt="KaosNauts" width="2163" height="727" decoding="async" />
-            </a>
-
-            <div class="nav-links" aria-label="Main navigation">
-                <a href="#about">About</a>
-                <a href="#trailer">Trailer</a>
-                <a href="#faq">FAQ</a>
-            </div>
-
-            <a class="btn btn-primary" href="#community">Join the Mission</a>
+            <a class="brand" href="#top" aria-label="KaosNauts home"><img class="brand-wordmark" src="./KaosNauts.png?v=painted-20261017" alt="KaosNauts" width="2163" height="727" decoding="async" /></a>
+            <div class="nav-links"><a href="#trailer">Trailer</a><a href="#about">The game</a><a href="#faq">FAQ</a></div>
+            <a class="btn btn-primary nav-cta" href="#community">Join the crew <span aria-hidden="true">↗</span></a>
         </div>
     </nav>
-
     <main id="top">
-        <header class="hero">
-            <div class="container hero-grid">
-                <div class="hero-brand-column">
-                    <div class="hero-logo-stack" aria-label="KaosNauts logo lockup">
-                        <img class="hero-wordmark" src="./KaosNauts.png?v=painted-20261017"
-                            alt="KaosNauts" width="2163" height="727" fetchpriority="high" decoding="async" />
-                    </div>
-                    <div class="eyebrow">Indie online co-op space game</div>
-                    <div class="platform-badges" aria-label="Target platforms">
-                        <span class="platform-badge">Windows PC</span>
-                        <span class="platform-badge">Android</span>
-                    </div>
+        <header class="hero container">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-logo-stack"><img class="hero-wordmark" src="./KaosNauts.png?v=painted-20261017" alt="KaosNauts" width="2163" height="727" fetchpriority="high" decoding="async" /></div>
+                    <p class="eyebrow">Online co-op · Space engineering</p>
+                    <h1>Build rockets.<br /><span class="accent">Brave the chaos.</span><br />Together.</h1>
+                    <p class="lead">Your rocket. Your crew.<br />One very unpredictable mission.</p>
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#community">Follow Development</a>
+                        <a class="btn btn-primary" href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Join the crew <span aria-hidden="true">↗</span></a>
+                        <a class="text-link" href="#trailer">Watch the trailer <span aria-hidden="true">↓</span></a>
                     </div>
+                    <p class="availability">In development <span aria-hidden="true">/</span> Windows PC · Android planned</p>
                 </div>
-
-                <div class="hero-copy-column">
-                    <h1><span class="gradient-text">Build rockets.</span><br />Create chaos.</h1>
-                    <p class="lead">
-                        KaosNauts is an online co-op space engineering game where players build spacecraft,
-                        launch missions, solve disasters together, and turn spectacular failures into better designs.
-                    </p>
-
-                    <div class="stats" aria-label="Game highlights">
-                        <div class="stat">
-                            <strong>100%</strong>
-                            <span>Online co-op focus</span>
-                        </div>
-                        <div class="stat">
-                            <strong>Indie</strong>
-                            <span>Built by a small team</span>
-                        </div>
-                        <div class="stat">
-                            <strong>Physics</strong>
-                            <span>Engineering chaos</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container">
-                <div id="trailer" class="trailer-card trailer-wide" aria-label="KaosNauts trailer">
-                    <div class="trailer-head">
-                        <span class="trailer-dot" aria-hidden="true"></span>
-                        Trailer
-                    </div>
-                    <p class="trailer-note">Trailer + visual previews.</p>
-                    <div class="trailer-carousel" data-carousel aria-label="KaosNauts media carousel">
-                        <div class="carousel-viewport">
-                            <div class="carousel-track" data-carousel-track>
-                                <div class="carousel-slide">
-                                    <iframe src="https://www.youtube.com/embed/OFNkOkT-kwQ?rel=0"
-                                        title="KaosNauts trailer" loading="lazy"
-                                        referrerpolicy="strict-origin-when-cross-origin"
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        allowfullscreen></iframe>
-                                </div>
-                                <a class="carousel-slide" href="./images/launch-site-gouache.png" target="_blank" rel="noopener noreferrer">
-                                    <img src="./images/launch-site-gouache.png" width="1578" height="997"
-                                        alt="Visual concept of two astronauts at the KaosNauts launch site in a hand-painted style"
-                                        loading="lazy" decoding="async" />
-                                </a>
-                                <a class="carousel-slide" href="./images/space-gouache.png" target="_blank" rel="noopener noreferrer">
-                                    <img src="./images/space-gouache.png" width="1113" height="617"
-                                        alt="KaosNauts space scene with an orange star, a shadowed planet and painted blue nebulae"
-                                        loading="lazy" decoding="async" />
-                                </a>
-                            </div>
-                        </div>
-                        <button class="carousel-btn carousel-btn-prev" type="button" data-carousel-prev
-                            aria-label="Previous image">‹</button>
-                        <button class="carousel-btn carousel-btn-next" type="button" data-carousel-next
-                            aria-label="Next image">›</button>
-                        <div class="carousel-thumbs" aria-label="Select media">
-                            <button class="carousel-thumb is-active" type="button" data-carousel-thumb="0"
-                                aria-label="Show trailer">Trailer</button>
-                            <button class="carousel-thumb" type="button" data-carousel-thumb="1"
-                                aria-label="Show launch site visual preview">
-                                <img src="./images/launch-site-gouache.png" alt="" loading="lazy" decoding="async" />
-                            </button>
-                            <button class="carousel-thumb" type="button" data-carousel-thumb="2"
-                                aria-label="Show space screenshot">
-                                <img src="./images/space-gouache.png" alt="" loading="lazy" decoding="async" />
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <figure id="trailer" class="trailer">
+                    <div class="media-label"><span class="status-dot" aria-hidden="true"></span> Mission preview <span>01 / TRAILER</span></div>
+                    <div class="video-frame"><iframe src="https://www.youtube.com/embed/OFNkOkT-kwQ?rel=0" title="KaosNauts trailer" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <figcaption>Meet the crew. See where the mission begins.</figcaption>
+                </figure>
             </div>
         </header>
-
-        <section id="about">
-            <div class="container">
-                <div class="section-head">
-                    <h2>Designed for messy teamwork.</h2>
-                    <p>
-                        Build, launch, crash, repair, and iterate as a crew. KaosNauts is about collaborative
-                        engineering,
-                        funny mistakes, and ambitious missions that rarely go exactly as planned.
-                    </p>
-                </div>
-
-                <div class="features">
-                    <article class="feature-card">
-                        <div class="icon">🛠️</div>
-                        <h3>Vessel Assembly</h3>
-                        <p>Create rockets and experimental spacecraft using modular parts, practical layouts, and
-                            questionable engineering decisions.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="icon">🌐</div>
-                        <h3>Online Co-op</h3>
-                        <p>Work together in shared sessions where every player can contribute to preparation, mission
-                            planning, and chaos control.</p>
-                    </article>
-
-                    <article class="feature-card">
-                        <div class="icon">💥</div>
-                        <h3>Failure Is Content</h3>
-                        <p>Explosions, bad staging, unstable designs, and emergency escapes are part of the story your
-                            crew creates.</p>
-                    </article>
-                </div>
+        <section id="about" class="game-section container" aria-labelledby="game-heading">
+            <div class="section-head"><div><p class="eyebrow">The mission</p><h2 id="game-heading">Big plans. Shared chaos.</h2></div><p>Build it. Fly it. Figure it out together.</p></div>
+            <div class="visual-grid">
+                <article class="visual-card">
+                    <a class="visual-image workshop" href="./images/albert-workshop.webp" target="_blank" rel="noopener noreferrer" aria-label="View Albert's workshop concept art"><img src="./images/albert-workshop.webp" alt="Albert working on an orange and cream rocket module in the workshop" width="1122" height="1402" loading="lazy" decoding="async" /><span class="image-label">Concept art</span></a>
+                    <div class="visual-copy"><span class="chapter" aria-hidden="true">01 / ASSEMBLY</span><h3>Build your way.</h3><p>Turn a pile of parts into your next great idea.</p></div>
+                </article>
+                <article class="visual-card">
+                    <a class="visual-image" href="./images/space-gouache.png" target="_blank" rel="noopener noreferrer" aria-label="View the space visual preview"><img src="./images/space-gouache.png" alt="A shadowed planet against a painted blue nebula and an orange star" width="1113" height="617" loading="lazy" decoding="async" /><span class="image-label">Visual preview</span></a>
+                    <div class="visual-copy"><span class="chapter" aria-hidden="true">02 / EXPLORATION</span><h3>Aim beyond.</h3><p>Leave the launchpad. Find out how far you can go.</p></div>
+                </article>
+                <article class="visual-card">
+                    <a class="visual-image launch-site" href="./images/launch-site-gouache.png" target="_blank" rel="noopener noreferrer" aria-label="View the co-op launch site concept art"><img src="./images/launch-site-gouache.png" alt="Two astronauts preparing together at the launch site" width="1578" height="997" loading="lazy" decoding="async" /><span class="image-label">Concept art</span></a>
+                    <div class="visual-copy"><span class="chapter" aria-hidden="true">03 / CO-OP</span><h3>Keep your crew close.</h3><p>Share the mission. Survive the unexpected together.</p></div>
+                </article>
             </div>
         </section>
-
-        <section id="faq">
-            <div class="container">
-                <div class="section-head">
-                    <h2>FAQ</h2>
-                    <p>Quick answers about gameplay, development stage, and where to follow updates.</p>
-                </div>
-                <div class="faq-grid">
-                    <article class="faq-item">
-                        <h3>What is KaosNauts?</h3>
-                        <p>An online co-op space engineering game about building spacecraft, launching missions, and
-                            surviving orbital chaos as a crew.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>Which platforms are planned?</h3>
-                        <p>Windows PC is the primary target, with Android support planned for a later phase.</p>
-                    </article>
-                    <article class="faq-item">
-                        <h3>Where can I follow progress?</h3>
-                        <p>Join Discord and follow Instagram below for updates, gameplay clips, and release news.</p>
-                    </article>
-                </div>
+        <section id="faq" class="faq-section container" aria-labelledby="faq-heading">
+            <div class="section-head"><div><p class="eyebrow">Before liftoff</p><h2 id="faq-heading">A few flight notes.</h2></div></div>
+            <div class="faq-list">
+                <details><summary>What kind of game is KaosNauts?</summary><p>An indie online co-op space engineering game. Build spacecraft, launch missions, and tackle disasters with your crew.</p></details>
+                <details><summary>Can I play yet?</summary><p>KaosNauts is in development. Join Discord for progress updates and future release news.</p></details>
+                <details><summary>Which platforms are planned?</summary><p>Windows PC is the primary target, with Android planned for a later phase.</p></details>
             </div>
         </section>
-
-        <section id="community" class="cta">
-            <div class="container">
-                <div class="cta-card">
-                    <h2>Join the crew before launch.</h2>
-                    <p>
-                        Follow development, share feedback, report bugs, and help shape an online co-op space game made
-                        for players who love building impossible machines.
-                    </p>
-                    <div class="hero-actions" style="justify-content: center; margin-top: 0;">
-                        <a class="btn btn-primary" href="https://discord.gg/JaSSQKtMgM" target="_blank"
-                            rel="noopener noreferrer">Join Discord</a>
-                        <a class="btn" href="https://www.instagram.com/kaosnauts" target="_blank"
-                            rel="noopener noreferrer">Follow on Instagram</a>
-                    </div>
-                </div>
+        <section id="community" class="community-section container" aria-labelledby="community-heading">
+            <div class="community-card"><p class="eyebrow">Every mission needs a crew</p><h2 id="community-heading">Your seat is waiting.</h2><p>Follow the build. Share your ideas. Be here for liftoff.</p>
+                <div class="hero-actions"><a class="btn btn-primary" href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Join Discord <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Follow on Instagram</a></div>
             </div>
         </section>
     </main>
-
-    <footer>
-        <div class="container footer-inner">
-            <div>© <span id="year"></span> KaosNauts. All rights reserved.</div>
-            <div class="socials">
-                <a href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Discord</a>
-                <a href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Instagram</a>
-            </div>
-        </div>
-    </footer>
-
+    <footer class="container footer-inner"><p>© <span id="year"></span> KaosNauts</p><div class="socials"><a href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
     <script src="./main.js"></script>
 </body>
-
 </html>
