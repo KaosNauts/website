@@ -3,6 +3,7 @@
 # inclusion takes precedence over exclusions.
 include:
   - sitemap.xml
+  - site.webmanifest
 exclude:
   - site
   - scripts

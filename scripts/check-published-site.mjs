@@ -6,6 +6,7 @@ import path from 'node:path';
 const root = path.resolve(process.argv[2] || '_site');
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const robots = await readFile(path.join(root, 'robots.txt'), 'utf8');
+JSON.parse(await readFile(path.join(root, 'site.webmanifest'), 'utf8'));
 assert(robots.includes('https://kaosnauts.com/sitemap.xml'));
 for (const locale of ['en', 'pt-br', 'ja']) {
     for (const suffix of ['', 'trailer/']) {
