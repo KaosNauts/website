@@ -1,0 +1,129 @@
+body {
+    background-color: #060c17;
+    background-image:
+        linear-gradient(180deg, #060c1720, #060c1740),
+        url("./images/space-background.webp");
+}
+
+body::before {
+    background:
+        linear-gradient(180deg, #060c1730, transparent 30%, transparent 70%, #060c1760),
+        radial-gradient(ellipse at center, #060c1730, transparent 80%);
+}
+
+/* The wordmark now stands alone; no space is reserved for the old emblem. */
+.brand-wordmark {
+    display: block;
+    width: clamp(120px, 14vw, 158px);
+    height: auto;
+}
+
+.hero-logo-stack {
+    --wordmark-offset: 0px;
+    margin-bottom: 18px;
+}
+
+.hero-wordmark {
+    transform: none;
+}
+
+/* Decorative atmosphere stays behind content and never receives pointer input. */
+.meteor-field {
+    --meteor-travel: max(95vw, 90vh);
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    contain: strict;
+}
+
+.meteor {
+    position: absolute;
+    top: -12vh;
+    left: var(--meteor-start);
+    width: clamp(80px, 12vw, 170px);
+    height: 2px;
+    border-radius: 100%;
+    opacity: 0;
+    background: linear-gradient(90deg, transparent, #a4bcce24 45%, #edcf9caa);
+    transform-origin: right center;
+    animation: meteor-fall var(--meteor-period) linear infinite;
+    animation-delay: var(--meteor-delay);
+}
+
+.meteor::after {
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #f0d9b0;
+    box-shadow: 0 0 5px #e6be6d60;
+}
+
+.meteor:nth-child(1) {
+    --meteor-start: 28vw;
+    --meteor-period: 19s;
+    --meteor-delay: -2s;
+}
+
+.meteor:nth-child(2) {
+    --meteor-start: 64vw;
+    --meteor-period: 23s;
+    --meteor-delay: -10s;
+}
+
+.meteor:nth-child(3) {
+    --meteor-start: 106vw;
+    --meteor-period: 21s;
+    --meteor-delay: -5s;
+}
+
+.meteor:nth-child(4) {
+    --meteor-start: 133vw;
+    --meteor-period: 29s;
+    --meteor-delay: -17s;
+}
+
+.meteor:nth-child(5) {
+    --meteor-start: 84vw;
+    --meteor-period: 31s;
+    --meteor-delay: -23s;
+}
+
+@keyframes meteor-fall {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, 0, 0) rotate(135deg);
+    }
+    3%, 25% {
+        opacity: 0.55;
+    }
+    36%, 100% {
+        opacity: 0;
+        transform: translate3d(calc(-1 * var(--meteor-travel)), var(--meteor-travel), 0) rotate(135deg);
+    }
+}
+
+@media (max-width: 680px) {
+    body {
+        background-position: 25% center;
+    }
+
+    .hero-logo-stack {
+        margin: 0 auto 14px;
+    }
+
+    .meteor:nth-child(n + 4) {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .meteor-field {
+        display: none;
+    }
+}
