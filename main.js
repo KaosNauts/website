@@ -46,12 +46,23 @@ if (!routeEntryLanguage()) {
         observer.observe(heroLogo);
     }
 
-    // Manual language changes keep the reader at the same section.
+    // Only a language-switch click restores scroll; ordinary deep links stay intact.
+    try {
+        const savedScroll = JSON.parse(window.sessionStorage.getItem('kaosnauts-language-scroll') || 'null');
+        window.sessionStorage.removeItem('kaosnauts-language-scroll');
+        if (savedScroll?.path === window.location.pathname && !window.location.hash
+            && Number.isFinite(savedScroll.y) && savedScroll.y >= 0
+            && Date.now() - savedScroll.at >= 0 && Date.now() - savedScroll.at < 60000) {
+            window.requestAnimationFrame(() => window.scrollTo({ top: savedScroll.y, behavior: 'instant' }));
+        }
+    } catch { /* Language links still work if storage is unavailable. */ }
     document.querySelectorAll('a[hreflang]').forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', event => {
+            if (event.defaultPrevented || event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
             const target = new URL(link.href);
-            target.hash = window.location.hash;
-            link.href = target.href;
+            try {
+                window.sessionStorage.setItem('kaosnauts-language-scroll', JSON.stringify({ path: target.pathname, y: window.scrollY, at: Date.now() }));
+            } catch { /* The normal link remains usable without scroll restoration. */ }
         });
     });
 }

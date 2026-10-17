@@ -23,7 +23,10 @@ Explicit language URLs are always respected and become the saved preference.
 Unsupported languages fall back to English; blocked local storage is tolerated.
 Query parameters and section hashes are retained. Without JavaScript, the root
 shows English with a canonical pointing to `/en/` and ordinary language links.
-Language links retain the section hash when JavaScript is available.
+Language switches restore the reader's scroll height in the new language using
+a short-lived, one-use session storage entry. They do not copy section hashes.
+Explicit deep links still work normally. If storage is blocked, language links
+remain usable and open at the top.
 The navigation appears after the main logo leaves the viewport. Without
 JavaScript/IntersectionObserver it remains visible as ordinary sticky navigation.
 A compact language selector stays in the top-right corner while the navigation
