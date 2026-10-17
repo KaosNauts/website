@@ -1,14 +1,15 @@
 body {
-    background-color: #060c17;
+    /* Same painted nebula map used by the game's universe-background material. */
+    background-color: #030613;
     background-image:
-        linear-gradient(180deg, #060c1720, #060c1740),
-        url("./images/space-background.webp");
+        linear-gradient(180deg, #03061315, #03061335),
+        url("./images/game-space-background.webp");
 }
 
 body::before {
     background:
-        linear-gradient(180deg, #060c1730, transparent 30%, transparent 70%, #060c1760),
-        radial-gradient(ellipse at center, #060c1730, transparent 80%);
+        url("./images/space-stars.svg") center / cover no-repeat,
+        linear-gradient(180deg, #03061315, transparent 30%, transparent 70%, #03061350);
 }
 
 /* The wordmark now stands alone; no space is reserved for the old emblem. */
@@ -46,7 +47,7 @@ body::before {
     height: 2px;
     border-radius: 100%;
     opacity: 0;
-    background: linear-gradient(90deg, transparent, #a4bcce24 45%, #edcf9caa);
+    background: linear-gradient(90deg, transparent, #bbedff24 45%, #bbedffaa);
     transform-origin: right center;
     animation: meteor-fall var(--meteor-period) linear infinite;
     animation-delay: var(--meteor-delay);
@@ -60,8 +61,8 @@ body::before {
     width: 3px;
     height: 3px;
     border-radius: 50%;
-    background: #f0d9b0;
-    box-shadow: 0 0 5px #e6be6d60;
+    background: #bbedff;
+    box-shadow: 0 0 5px #bbedff60;
 }
 
 .meteor:nth-child(1) {
