@@ -7,6 +7,7 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const locales = JSON.parse(await readFile(path.join(root, 'site/locales.json'), 'utf8'));
 const sitemap = await readFile(path.join(root, 'sitemap.xml'), 'utf8');
 const keys = Object.keys(locales.en).sort();
+assert.equal(await readFile(path.join(root, 'index.html'), 'utf8'), await readFile(path.join(root, 'en/index.html'), 'utf8'), 'Root must share the English fallback and canonical');
 for (const [key, locale] of Object.entries(locales)) {
     assert.deepEqual(Object.keys(locale).sort(), keys, `Incomplete translation: ${key}`);
     const html = await readFile(path.join(root, locale.path.slice(1), 'index.html'), 'utf8');

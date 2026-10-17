@@ -1,6 +1,6 @@
 {
   "en": {
-    "lang": "en", "locale": "en_US", "path": "/", "label": "English", "short": "EN", "flag": "🇺🇸",
+    "lang": "en", "locale": "en_US", "path": "/en/", "label": "English", "short": "EN", "flag": "🇺🇸",
     "title": "KaosNauts — Co-op Space Game & Rocket Building",
     "description": "Build rockets with friends in KaosNauts, an indie online co-op space engineering game. Explore space, tackle launch disasters together, and follow development.",
     "skip": "Skip to content", "navLabel": "Main navigation", "homeLabel": "KaosNauts home", "trailerLabel": "Trailer", "gameLabel": "The game", "faqLabel": "FAQ", "navJoin": "Join the crew",

@@ -25,6 +25,9 @@ img { display: block; max-width: 100%; }
 .nav-links a:hover, .socials a:hover { color: var(--text); }
 .nav-auto .nav { position: fixed; inset: 0 0 auto; transition: transform 180ms ease, visibility 180ms ease; }
 .nav-auto .nav:not(.is-visible) { transform: translateY(-100%); visibility: hidden; }
+.top-language { display: none; }
+.nav-auto .top-language:not([hidden]) { display: block; position: fixed; top: max(16px, env(safe-area-inset-top)); right: max(18px, env(safe-area-inset-right)); z-index: 60; }
+.top-language summary { min-height: 42px; display: flex; align-items: center; gap: 8px; background: #050a13e8; backdrop-filter: blur(16px); }
 .language-menu { position: relative; border: 0; margin-left: auto; }
 .flag { display: inline-block; width: 20px; height: 14px; vertical-align: -2px; border: 1px solid #ffffff30; border-radius: 2px; }
 .language-menu summary { padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 12px; white-space: nowrap; }
@@ -121,6 +124,7 @@ details p { margin: 0; padding: 0 32px 22px 0; font-size: 14px; color: var(--mut
     .nav-links { display: none; }
     .nav-cta { min-height: 40px; padding: 10px 14px; font-size: 12px; gap: 10px; }
     .hero { padding-block: 32px 40px; }
+    .nav-auto .hero { padding-top: 76px; }
     .hero-logo-stack { width: min(100%, 300px); }
     .eyebrow { font-size: 10px; }
     .lead { font-size: 15px; }

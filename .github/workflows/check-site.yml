@@ -13,3 +13,4 @@ jobs:
       - run: node scripts/build-site.mjs --check
       - run: node scripts/check-site.mjs
       - run: node --check main.js
+      - run: node scripts/test-language-routing.mjs

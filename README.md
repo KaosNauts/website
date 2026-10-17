@@ -8,7 +8,7 @@ Static site published from `main` by GitHub Pages. No runtime dependencies.
 - English, Brazilian Portuguese and Japanese text: `site/locales.json`.
 - Shared appearance and behavior: `styles.css`, `brand-background.css`, `main.js`.
 - Run `node scripts/build-site.mjs` after changing markup or translations.
-- Commit the generated `/index.html`, `/pt-br/index.html`, `/ja/index.html`,
+- Commit the generated `/index.html`, `/en/index.html`, `/pt-br/index.html`, `/ja/index.html`,
   `sitemap.xml` and `robots.txt` with the sources.
 - Validate with `node scripts/build-site.mjs --check` and
   `node scripts/check-site.mjs`. CI checks generated files are current.
@@ -17,10 +17,17 @@ Static site published from `main` by GitHub Pages. No runtime dependencies.
 
 Each locale serves translated HTML without JavaScript, with its own canonical,
 reciprocal `hreflang` links, social metadata and VideoGame structured data.
-English is the `x-default`. Language links retain the section hash when JavaScript
-is available; no automatic language or location redirects are used.
+The root is the `x-default` entry: JavaScript sends it to `/en/`, `/pt-br/` or
+`/ja/`, using the saved language or the first supported browser language.
+Explicit language URLs are always respected and become the saved preference.
+Unsupported languages fall back to English; blocked local storage is tolerated.
+Query parameters and section hashes are retained. Without JavaScript, the root
+shows English with a canonical pointing to `/en/` and ordinary language links.
+Language links retain the section hash when JavaScript is available.
 The navigation appears after the main logo leaves the viewport. Without
 JavaScript/IntersectionObserver it remains visible as ordinary sticky navigation.
+A compact language selector stays in the top-right corner while the navigation
+is hidden, then yields to the language selector inside the navigation.
 
 ## Search content
 

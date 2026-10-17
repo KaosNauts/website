@@ -47,6 +47,8 @@ for (const [key, locale] of entries) {
         return escape(values[token]);
     });
     await output(path.join(locale.path.slice(1), 'index.html'), html);
+    // The root remains usable without JavaScript and canonicalizes to English.
+    if (key === 'en') await output('index.html', html);
 }
 await output('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(([, locale]) => `  <url><loc>${origin}${locale.path}</loc></url>`).join('\n')}\n</urlset>\n`);
 await output('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
