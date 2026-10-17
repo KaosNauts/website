@@ -5,6 +5,8 @@ Static site published from `main` by GitHub Pages. No runtime dependencies.
 ## Edit and translate
 
 - Shared markup: `site/template.html`.
+- Trailer watch-page markup: `site/watch-template.html`; generated at each
+  locale's `trailer/` path. Include these generated pages in commits too.
 - English, Brazilian Portuguese and Japanese text: `site/locales.json`.
 - Shared appearance and behavior: `styles.css`, `brand-background.css`, `main.js`.
 - Run `node scripts/build-site.mjs` after changing markup or translations.
@@ -60,3 +62,23 @@ References:
 After publication, submit `https://kaosnauts.com/sitemap.xml` in the owner's
 verified Google Search Console property and monitor indexing/search queries.
 That account-level setup is separate from publishing this repository.
+
+## Media and publication checks
+
+`site/trailer.json` records the public YouTube video's actual publication date,
+duration, thumbnail and source. Update these verified values when replacing the
+trailer; the generator adds VideoObject markup and localized watch pages.
+
+Original artwork remains in the repository. Responsive WebP derivatives are
+generated with `python scripts/optimize-images.py` (Pillow required); commit them
+alongside generated HTML. The browser selects a suitable width using `srcset`.
+
+CI also builds with GitHub's Jekyll action and runs
+`node scripts/check-published-site.mjs _site`. `_config.yml` explicitly includes
+`sitemap.xml`: excluding the authoring folder `site` otherwise also matches that
+filename through Jekyll's prefix rules.
+
+The domain is behind Cloudflare. Its zone setting **SSL/TLS → Edge Certificates
+→ Always Use HTTPS** must be enabled to redirect public HTTP requests. Repository
+HTML cannot configure that edge redirect. This setting still requires access to
+the owner's Cloudflare dashboard; it was not changed by this repository update.

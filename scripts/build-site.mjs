@@ -6,6 +6,8 @@ const root = fileURLToPath(new URL('../', import.meta.url));
 const origin = 'https://kaosnauts.com';
 const locales = JSON.parse(await readFile(path.join(root, 'site/locales.json'), 'utf8'));
 const template = (await readFile(path.join(root, 'site/template.html'), 'utf8')).replaceAll('\r\n', '\n');
+const watchTemplate = (await readFile(path.join(root, 'site/watch-template.html'), 'utf8')).replaceAll('\r\n', '\n');
+const trailer = JSON.parse(await readFile(path.join(root, 'site/trailer.json'), 'utf8'));
 const escape = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;').replaceAll("'", '&#39;');
 const entries = Object.entries(locales);
 // Inline flags render consistently on Windows, where flag emoji may show letters.
@@ -15,8 +17,6 @@ const flags = {
     ja: '<rect width="24" height="16" fill="#fff"/><circle cx="12" cy="8" r="4.5" fill="#bc002d"/>'
 };
 const flag = key => `<svg class="flag" viewBox="0 0 24 16" aria-hidden="true" focusable="false">${flags[key]}</svg>`;
-const alternates = entries.map(([, locale]) => `<link rel="alternate" hreflang="${locale.lang}" href="${origin}${locale.path}" />`).join('\n    ')
-    + `\n    <link rel="alternate" hreflang="x-default" href="${origin}/" />`;
 let outdated = false;
 async function output(relative, contents) {
     const file = path.join(root, relative);
@@ -29,28 +29,46 @@ async function output(relative, contents) {
     }
 }
 for (const [key, locale] of entries) {
-    const languageLinks = entries.map(([otherKey, other]) => `<a href="${other.path}" hreflang="${other.lang}" lang="${other.lang}"${key === otherKey ? ' aria-current="page"' : ''}>${flag(otherKey)} ${other.label}</a>`).join('');
-    const languageMenu = `<details class="language-menu"><summary aria-label="${escape(locale.languageLabel)}">${flag(key)} ${escape(locale.short)}</summary><div class="language-options">${languageLinks}</div></details>`;
-    const structuredData = JSON.stringify({
-        '@context': 'https://schema.org', '@type': 'VideoGame',
-        '@id': `${origin}/#game`, name: 'KaosNauts', url: `${origin}${locale.path}`,
-        description: locale.description, inLanguage: locale.lang,
-        genre: ['Space exploration', 'Cooperative game', 'Space engineering'],
-        image: `${origin}/KaosNauts.png`,
-        sameAs: ['https://www.instagram.com/kaosnauts', 'https://www.youtube.com/channel/UCB8qw4UOMYYOVuPwmP45RlA']
-    }).replaceAll('<', '\\u003c');
-    const raw = { alternates, languageMenu, languageLinks, structuredData };
-    const values = { ...locale, canonical: origin + locale.path };
-    const html = template.replace(/\{\{(\w+)\}\}/g, (_, token) => {
-        if (Object.hasOwn(raw, token)) return raw[token];
-        if (!Object.hasOwn(values, token)) throw new Error(`Missing translation: ${key}.${token}`);
-        return escape(values[token]);
-    });
-    await output(path.join(locale.path.slice(1), 'index.html'), html);
-    // The root remains usable without JavaScript and canonicalizes to English.
-    if (key === 'en') await output('index.html', html);
+    for (const watch of [false, true]) {
+        const route = other => other.path + (watch ? 'trailer/' : '');
+        const canonical = origin + route(locale);
+        const alternates = entries.map(([, other]) => `<link rel="alternate" hreflang="${other.lang}" href="${origin}${route(other)}" />`).join('\n    ')
+            + `\n    <link rel="alternate" hreflang="x-default" href="${origin}${watch ? '/en/trailer/' : '/'}" />`;
+        const languageLinks = entries.map(([otherKey, other]) => `<a href="${route(other)}" hreflang="${other.lang}" lang="${other.lang}"${key === otherKey ? ' aria-current="page"' : ''}>${flag(otherKey)} ${other.label}</a>`).join('');
+        const languageMenu = `<details class="language-menu"><summary aria-label="${escape(locale.languageLabel)}">${flag(key)} ${escape(locale.short)}</summary><div class="language-options">${languageLinks}</div></details>`;
+        const videoId = `${origin}/#trailer-video`;
+        const video = {
+            '@type': 'VideoObject', '@id': videoId,
+            name: locale.videoTitle, description: locale.videoDescription,
+            thumbnailUrl: trailer.thumbnailUrl, uploadDate: trailer.uploadDate,
+            duration: trailer.duration, inLanguage: trailer.inLanguage,
+            embedUrl: `https://www.youtube.com/embed/${trailer.youtubeId}`,
+            url: `${origin}${locale.path}trailer/`
+        };
+        const game = {
+            '@type': 'VideoGame', '@id': `${origin}/#game`, name: 'KaosNauts',
+            url: `${origin}${locale.path}`, description: locale.description, inLanguage: locale.lang,
+            genre: ['Space exploration', 'Cooperative game', 'Space engineering'],
+            image: `${origin}/images/wordmark-1200.webp`, trailer: { '@id': videoId },
+            sameAs: ['https://www.instagram.com/kaosnauts', 'https://www.youtube.com/channel/UCB8qw4UOMYYOVuPwmP45RlA']
+        };
+        const page = { '@type': 'WebPage', '@id': canonical, url: canonical,
+            name: locale.watchTitle, inLanguage: locale.lang, mainEntity: { '@id': videoId } };
+        const structuredData = JSON.stringify({ '@context': 'https://schema.org', '@graph': [watch ? page : game, video] }).replaceAll('<', '\\u003c');
+        const raw = { alternates, languageMenu, languageLinks, structuredData };
+        const values = { ...locale, canonical, watchPath: locale.path + 'trailer/',
+            ...(watch ? { title: locale.watchTitle, description: locale.videoDescription } : {}) };
+        const html = (watch ? watchTemplate : template).replace(/\{\{(\w+)\}\}/g, (_, token) => {
+            if (Object.hasOwn(raw, token)) return raw[token];
+            if (!Object.hasOwn(values, token)) throw new Error(`Missing translation: ${key}.${token}`);
+            return escape(values[token]);
+        });
+        await output(path.join(route(locale).slice(1), 'index.html'), html);
+        // The root remains usable without JavaScript and canonicalizes to English.
+        if (key === 'en' && !watch) await output('index.html', html);
+    }
 }
-await output('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.map(([, locale]) => `  <url><loc>${origin}${locale.path}</loc></url>`).join('\n')}\n</urlset>\n`);
+await output('sitemap.xml', `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries.flatMap(([, locale]) => [locale.path, locale.path + 'trailer/']).map(route => `  <url><loc>${origin}${route}</loc></url>`).join('\n')}\n</urlset>\n`);
 await output('robots.txt', `User-agent: *\nAllow: /\n\nSitemap: ${origin}/sitemap.xml\n`);
 if (outdated) process.exitCode = 1;
 else console.log(process.argv.includes('--check') ? 'All locale pages are up to date.' : 'Generated English, Portuguese and Japanese pages, sitemap and robots.txt.');

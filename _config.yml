@@ -1,4 +1,8 @@
 # Publish the generated pages and assets, keeping authoring sources out of Pages.
+# Jekyll's prefix exclusion for "site" also matches "sitemap.xml"; explicit
+# inclusion takes precedence over exclusions.
+include:
+  - sitemap.xml
 exclude:
   - site
   - scripts

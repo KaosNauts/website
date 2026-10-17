@@ -16,17 +16,19 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="{{title}}" />
     <meta name="twitter:description" content="{{description}}" />
-    <meta name="twitter:image" content="https://kaosnauts.com/images/launch-site-gouache.png" />
+    <meta name="twitter:image" content="https://kaosnauts.com/images/launch-site-1440.webp" />
     <script type="application/ld+json">{{structuredData}}</script>
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://kaosnauts.com/images/launch-site-gouache.png" />
+    <meta property="og:image" content="https://kaosnauts.com/images/launch-site-1440.webp" />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="910" />
     <title>{{title}}</title>
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/styles.css?v=top-languages-20261017" />
+    <link rel="stylesheet" href="/styles.css?v=responsive-media-20261017" />
     <link rel="stylesheet" href="/brand-background.css" />
 </head>
 <body>
@@ -38,7 +40,7 @@
     </div>
     <nav class="nav" aria-label="{{navLabel}}">
         <div class="container nav-inner">
-            <a class="brand" href="#top" aria-label="{{homeLabel}}"><img class="brand-wordmark" src="/KaosNauts.png?v=painted-20261017" alt="KaosNauts" width="2163" height="727" decoding="async" /></a>
+            <a class="brand" href="#top" aria-label="{{homeLabel}}"><img class="brand-wordmark" src="/images/wordmark-432.webp" srcset="/images/wordmark-432.webp 432w, /images/wordmark-864.webp 864w, /images/wordmark-1200.webp 1200w" sizes="(max-width: 680px) 96px, 144px" alt="KaosNauts" width="2163" height="727" decoding="async" /></a>
             <div class="nav-links"><a href="#trailer">{{trailerLabel}}</a><a href="#about">{{gameLabel}}</a><a href="#faq">{{faqLabel}}</a></div>
             {{languageMenu}}
             <a class="btn btn-primary nav-cta" href="#community">{{navJoin}} <span aria-hidden="true">↗</span></a>
@@ -48,7 +50,7 @@
         <header class="hero container">
             <div class="hero-grid">
                 <div class="hero-copy">
-                    <div class="hero-logo-stack"><img class="hero-wordmark" src="/KaosNauts.png?v=painted-20261017" alt="KaosNauts" width="2163" height="727" fetchpriority="high" decoding="async" /></div>
+                    <div class="hero-logo-stack"><img class="hero-wordmark" src="/images/wordmark-864.webp" srcset="/images/wordmark-432.webp 432w, /images/wordmark-864.webp 864w, /images/wordmark-1200.webp 1200w" sizes="(max-width: 680px) 300px, 360px" alt="KaosNauts" width="2163" height="727" fetchpriority="high" decoding="async" /></div>
                     <h1>{{heroLine}}</h1>
                 </div>
                 <figure id="trailer" class="trailer">
@@ -61,15 +63,15 @@
             <div class="section-head"><div><p class="eyebrow">{{missionLabel}}</p><h2 id="game-heading">{{missionTitle}}</h2></div><p>{{missionText}}</p></div>
             <div class="visual-grid">
                 <article class="visual-card">
-                    <a class="visual-image workshop" href="/images/albert-workshop.webp" target="_blank" rel="noopener noreferrer" aria-label="{{workshopLink}}"><img src="/images/albert-workshop.webp" alt="{{workshopAlt}}" width="1122" height="1402" loading="lazy" decoding="async" /><span class="image-label">{{conceptLabel}}</span></a>
+                    <a class="visual-image workshop" href="/images/workshop-1122.webp" target="_blank" rel="noopener noreferrer" aria-label="{{workshopLink}}"><img src="/images/workshop-480.webp" srcset="/images/workshop-480.webp 480w, /images/workshop-960.webp 960w, /images/workshop-1122.webp 1122w" sizes="(max-width: 680px) calc(100vw - 36px), 400px" alt="{{workshopAlt}}" width="1122" height="1402" loading="lazy" decoding="async" /><span class="image-label">{{conceptLabel}}</span></a>
                     <div class="visual-copy"><span class="chapter" aria-hidden="true">01 / {{assemblyLabel}}</span><h3>{{buildTitle}}</h3><p>{{buildText}}</p></div>
                 </article>
                 <article class="visual-card">
-                    <a class="visual-image" href="/images/space-gouache.png" target="_blank" rel="noopener noreferrer" aria-label="{{spaceLink}}"><img src="/images/space-gouache.png" alt="{{spaceAlt}}" width="1113" height="617" loading="lazy" decoding="async" /><span class="image-label">{{previewLabel}}</span></a>
+                    <a class="visual-image" href="/images/space-1113.webp" target="_blank" rel="noopener noreferrer" aria-label="{{spaceLink}}"><img src="/images/space-480.webp" srcset="/images/space-480.webp 480w, /images/space-960.webp 960w, /images/space-1113.webp 1113w" sizes="(max-width: 680px) calc(100vw - 36px), 400px" alt="{{spaceAlt}}" width="1113" height="617" loading="lazy" decoding="async" /><span class="image-label">{{previewLabel}}</span></a>
                     <div class="visual-copy"><span class="chapter" aria-hidden="true">02 / {{exploreLabel}}</span><h3>{{exploreTitle}}</h3><p>{{exploreText}}</p></div>
                 </article>
                 <article class="visual-card">
-                    <a class="visual-image launch-site" href="/images/launch-site-gouache.png" target="_blank" rel="noopener noreferrer" aria-label="{{coopLink}}"><img src="/images/launch-site-gouache.png" alt="{{coopAlt}}" width="1578" height="997" loading="lazy" decoding="async" /><span class="image-label">{{conceptLabel}}</span></a>
+                    <a class="visual-image launch-site" href="/images/launch-site-1440.webp" target="_blank" rel="noopener noreferrer" aria-label="{{coopLink}}"><img src="/images/launch-site-480.webp" srcset="/images/launch-site-480.webp 480w, /images/launch-site-960.webp 960w, /images/launch-site-1440.webp 1440w" sizes="(max-width: 680px) calc(100vw - 36px), 400px" alt="{{coopAlt}}" width="1578" height="997" loading="lazy" decoding="async" /><span class="image-label">{{conceptLabel}}</span></a>
                     <div class="visual-copy"><span class="chapter" aria-hidden="true">03 / {{coopLabel}}</span><h3>{{coopTitle}}</h3><p>{{coopText}}</p></div>
                 </article>
             </div>
@@ -88,7 +90,7 @@
             </div>
         </section>
     </main>
-    <footer class="container footer-inner"><p>© <span id="year"></span> KaosNauts</p><div class="socials"><a href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
+    <footer class="container footer-inner"><p>© <span id="year"></span> KaosNauts</p><div class="socials"><a href="{{watchPath}}">{{trailerLabel}}</a><a href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
     <nav class="container footer-languages" aria-label="{{languageLabel}}">{{languageLinks}}</nav>
     <script src="/main.js?v=language-scroll-20261017"></script>
 </body>

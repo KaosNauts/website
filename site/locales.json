@@ -17,7 +17,10 @@
     "question2": "Can I play yet?", "answer2": "KaosNauts is in development. Join Discord for progress updates and future release news.",
     "question3": "Which platforms are planned?", "answer3": "Windows PC is the primary target, with Android planned for a later phase.",
     "communityEyebrow": "Every mission needs a crew", "communityTitle": "Your seat is waiting.", "communityText": "Follow development. Share your ideas. Be here for liftoff.",
-    "discord": "Join Discord", "instagram": "Follow on Instagram", "languageLabel": "Language"
+    "discord": "Join Discord", "instagram": "Follow on Instagram", "languageLabel": "Language",
+    "watchTitle": "Watch the KaosNauts teaser — Official Trailer",
+    "videoDescription": "A 16-second art teaser introducing the painted space world of KaosNauts, an online co-op space engineering game in development.",
+    "watchBack": "Discover the game"
   },
   "pt-br": {
     "lang": "pt-BR", "locale": "pt_BR", "path": "/pt-br/", "label": "Português", "short": "PT-BR", "flag": "🇧🇷",
@@ -37,7 +40,10 @@
     "question2": "Já posso jogar?", "answer2": "KaosNauts está em desenvolvimento. Entre no Discord para acompanhar as novidades e os futuros anúncios de lançamento.",
     "question3": "Quais plataformas estão previstas?", "answer3": "O foco inicial é Windows PC, com Android planejado para uma etapa posterior.",
     "communityEyebrow": "Toda missão precisa de uma tripulação", "communityTitle": "Seu lugar está reservado.", "communityText": "Acompanhe o desenvolvimento. Compartilhe ideias. Esteja com a gente na decolagem.",
-    "discord": "Entrar no Discord", "instagram": "Seguir no Instagram", "languageLabel": "Idioma"
+    "discord": "Entrar no Discord", "instagram": "Seguir no Instagram", "languageLabel": "Idioma",
+    "watchTitle": "Assista ao teaser de KaosNauts — Trailer oficial",
+    "videoDescription": "Um teaser artístico de 16 segundos apresenta o universo espacial pintado de KaosNauts, um jogo de engenharia espacial cooperativo online em desenvolvimento.",
+    "watchBack": "Conheça o jogo"
   },
   "ja": {
     "lang": "ja", "locale": "ja_JP", "path": "/ja/", "label": "日本語", "short": "日本語", "flag": "🇯🇵",
@@ -57,6 +63,9 @@
     "question2": "もう遊べますか？", "answer2": "KaosNautsは現在開発中です。開発状況や今後のリリース情報はDiscordでお知らせします。",
     "question3": "対応予定のプラットフォームは？", "answer3": "まずはWindows PCを対象に開発しています。Androidへの対応はその後を予定しています。",
     "communityEyebrow": "どんなミッションにも、仲間が必要。", "communityTitle": "あなたの席、空いています。", "communityText": "開発を見守り、アイデアを届け、一緒に打ち上げを迎えよう。",
-    "discord": "Discordに参加", "instagram": "Instagramをフォロー", "languageLabel": "言語"
+    "discord": "Discordに参加", "instagram": "Instagramをフォロー", "languageLabel": "言語",
+    "watchTitle": "KaosNauts ティーザーを見る — 公式トレーラー",
+    "videoDescription": "開発中のオンライン協力型宇宙工学ゲーム、KaosNautsの絵画風の宇宙を紹介する16秒のアートティーザーです。",
+    "watchBack": "ゲームについて詳しく見る"
   }
 }

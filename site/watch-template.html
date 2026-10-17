@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{description}}" />
+    <link rel="canonical" href="{{canonical}}" />
+    {{alternates}}
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#030613" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{canonical}}" />
+    <meta property="og:locale" content="{{locale}}" />
+    <meta property="og:site_name" content="KaosNauts" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{title}}" />
+    <meta name="twitter:description" content="{{description}}" />
+    <meta name="twitter:image" content="https://kaosnauts.com/images/launch-site-1440.webp" />
+    <script type="application/ld+json">{{structuredData}}</script>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://kaosnauts.com/images/launch-site-1440.webp" />
+    <meta property="og:image:width" content="1440" />
+    <meta property="og:image:height" content="910" />
+    <title>{{title}}</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/styles.css?v=responsive-media-20261017" />
+    <link rel="stylesheet" href="/brand-background.css" />
+</head>
+<body>
+    <a class="skip-link" href="#top">{{skip}}</a>
+    <div class="top-language" hidden>{{languageMenu}}</div>
+    <div class="meteor-field" aria-hidden="true">
+        <span class="meteor"></span><span class="meteor"></span><span class="meteor"></span>
+        <span class="meteor"></span><span class="meteor"></span>
+    </div>
+    <nav class="nav" aria-label="{{navLabel}}">
+        <div class="container nav-inner">
+            <a class="brand" href="#top" aria-label="{{homeLabel}}"><img class="brand-wordmark" src="/images/wordmark-432.webp" srcset="/images/wordmark-432.webp 432w, /images/wordmark-864.webp 864w, /images/wordmark-1200.webp 1200w" sizes="(max-width: 680px) 96px, 144px" alt="KaosNauts" width="2163" height="727" decoding="async" /></a>
+            <div class="nav-links"><a href="#trailer">{{trailerLabel}}</a><a href="{{path}}#about">{{gameLabel}}</a><a href="{{path}}#faq">{{faqLabel}}</a></div>
+            {{languageMenu}}
+            <a class="btn btn-primary nav-cta" href="{{path}}#community">{{navJoin}} <span aria-hidden="true">↗</span></a>
+        </div>
+    </nav>
+    <main id="top">
+        <header class="hero container">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-logo-stack"><img class="hero-wordmark" src="/images/wordmark-864.webp" srcset="/images/wordmark-432.webp 432w, /images/wordmark-864.webp 864w, /images/wordmark-1200.webp 1200w" sizes="(max-width: 680px) 300px, 360px" alt="KaosNauts" width="2163" height="727" fetchpriority="high" decoding="async" /></div>
+                    <h1>{{videoTitle}}</h1>
+                </div>
+                <figure id="trailer" class="trailer">
+                    <div class="video-frame"><iframe src="https://www.youtube.com/embed/OFNkOkT-kwQ?rel=0" title="{{videoTitle}}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                    <figcaption>{{videoDescription}}</figcaption>
+                </figure>
+                <a class="btn btn-primary hero-join" href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">{{heroJoin}} <span aria-hidden="true">↗</span></a>
+            </div>
+                <p class="watch-back"><a href="{{path}}">{{watchBack}} →</a></p>
+        </header>
+    </main>
+    <footer class="container footer-inner"><p>© <span id="year"></span> KaosNauts</p><div class="socials"><a href="{{watchPath}}">{{trailerLabel}}</a><a href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
+    <nav class="container footer-languages" aria-label="{{languageLabel}}">{{languageLinks}}</nav>
+    <script src="/main.js?v=language-scroll-20261017"></script>
+</body>
+</html>

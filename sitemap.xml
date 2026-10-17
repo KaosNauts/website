@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://kaosnauts.com/en/</loc></url>
+  <url><loc>https://kaosnauts.com/en/trailer/</loc></url>
   <url><loc>https://kaosnauts.com/pt-br/</loc></url>
+  <url><loc>https://kaosnauts.com/pt-br/trailer/</loc></url>
   <url><loc>https://kaosnauts.com/ja/</loc></url>
+  <url><loc>https://kaosnauts.com/ja/trailer/</loc></url>
 </urlset>

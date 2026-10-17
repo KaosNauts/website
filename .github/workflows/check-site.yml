@@ -14,3 +14,8 @@ jobs:
       - run: node scripts/check-site.mjs
       - run: node --check main.js
       - run: node scripts/test-language-routing.mjs
+      - uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+      - run: node scripts/check-published-site.mjs _site
