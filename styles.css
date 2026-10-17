@@ -23,6 +23,20 @@ img { display: block; max-width: 100%; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 84px; }
 .nav-links, .socials { display: flex; gap: 28px; font-size: 14px; color: var(--muted); }
 .nav-links a:hover, .socials a:hover { color: var(--text); }
+.nav-auto .nav { position: fixed; inset: 0 0 auto; transition: transform 180ms ease, visibility 180ms ease; }
+.nav-auto .nav:not(.is-visible) { transform: translateY(-100%); visibility: hidden; }
+.language-menu { position: relative; border: 0; margin-left: auto; }
+.flag { display: inline-block; width: 20px; height: 14px; vertical-align: -2px; border: 1px solid #ffffff30; border-radius: 2px; }
+.language-menu summary { padding: 10px 12px; border: 1px solid var(--border); border-radius: 6px; font-size: 12px; white-space: nowrap; }
+.language-menu summary::after, .language-menu[open] summary::after { content: none; }
+.language-options { position: absolute; right: 0; top: calc(100% + 8px); min-width: 180px; padding: 8px; border: 1px solid var(--border); border-radius: 8px; background: #080f20; box-shadow: 0 12px 30px #0008; }
+.language-options a { display: block; padding: 10px; font-size: 14px; border-radius: 4px; }
+.language-options a:hover, .language-options a[aria-current] { background: #ffffff12; }
+.footer-languages { display: flex; justify-content: flex-end; gap: 24px; padding-bottom: 30px; flex-wrap: wrap; color: var(--muted); font-size: 13px; }
+.footer-languages a[aria-current] { color: var(--accent); }
+:lang(ja) { font-family: "Yu Gothic UI", "Yu Gothic", "Hiragino Sans", "Noto Sans JP", sans-serif; }
+:lang(ja) h2, :lang(ja) h3 { letter-spacing: 0; line-height: 1.4; }
+.nav .brand-wordmark { width: clamp(96px, 10vw, 144px); }
 .btn { display: inline-flex; justify-content: center; align-items: center; gap: 16px; min-height: 48px; padding: 12px 24px; border-radius: 6px; font-size: 14px; font-weight: 650; line-height: 1.4; transition: background 180ms ease, transform 180ms ease; }
 .btn:hover { transform: translateY(-2px); }
 .btn-primary { color: #211205; background: #f5a44e; }
@@ -98,6 +112,12 @@ details p { margin: 0; padding: 0 32px 22px 0; font-size: 14px; color: var(--mut
 @media (max-width: 680px) {
     .container { width: calc(100% - 36px); }
     .nav-inner { min-height: 72px; gap: 12px; }
+    .language-menu { margin-left: auto; }
+    .language-menu summary { font-size: 11px; padding: 8px; }
+    .nav-inner { gap: 8px; }
+    .nav .nav-cta { font-size: 11px; padding: 10px; }
+    .nav-cta span { display: none; }
+    .footer-languages { justify-content: flex-start; gap: 20px; }
     .nav-links { display: none; }
     .nav-cta { min-height: 40px; padding: 10px 14px; font-size: 12px; gap: 10px; }
     .hero { padding-block: 32px 40px; }
@@ -123,6 +143,6 @@ details p { margin: 0; padding: 0 32px 22px 0; font-size: 14px; color: var(--mut
 }
 @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .btn, .visual-image img { transition: none; }
+    .btn, .visual-image img, .nav-auto .nav { transition: none; }
     .btn:hover, .visual-image:hover img { transform: none; }
 }

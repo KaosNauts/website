@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{description}}" />
+    <link rel="canonical" href="{{canonical}}" />
+    {{alternates}}
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <meta name="theme-color" content="#030613" />
+    <meta property="og:title" content="{{title}}" />
+    <meta property="og:description" content="{{description}}" />
+    <meta property="og:url" content="{{canonical}}" />
+    <meta property="og:locale" content="{{locale}}" />
+    <meta property="og:site_name" content="KaosNauts" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{title}}" />
+    <meta name="twitter:description" content="{{description}}" />
+    <meta name="twitter:image" content="https://kaosnauts.com/images/launch-site-gouache.png" />
+    <script type="application/ld+json">{{structuredData}}</script>
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://kaosnauts.com/images/launch-site-gouache.png" />
+    <title>{{title}}</title>
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="/styles.css?v=i18n-20261017" />
+    <link rel="stylesheet" href="/brand-background.css" />
+</head>
+<body>
+    <a class="skip-link" href="#top">{{skip}}</a>
+    <div class="meteor-field" aria-hidden="true">
+        <span class="meteor"></span><span class="meteor"></span><span class="meteor"></span>
+        <span class="meteor"></span><span class="meteor"></span>
+    </div>
+    <nav class="nav" aria-label="{{navLabel}}">
+        <div class="container nav-inner">
+            <a class="brand" href="#top" aria-label="{{homeLabel}}"><img class="brand-wordmark" src="/KaosNauts.png?v=painted-20261017" alt="KaosNauts" width="2163" height="727" decoding="async" /></a>
+            <div class="nav-links"><a href="#trailer">{{trailerLabel}}</a><a href="#about">{{gameLabel}}</a><a href="#faq">{{faqLabel}}</a></div>
+            {{languageMenu}}
+            <a class="btn btn-primary nav-cta" href="#community">{{navJoin}} <span aria-hidden="true">↗</span></a>
+        </div>
+    </nav>
+    <main id="top">
+        <header class="hero container">
+            <div class="hero-grid">
+                <div class="hero-copy">
+                    <div class="hero-logo-stack"><img class="hero-wordmark" src="/KaosNauts.png?v=painted-20261017" alt="KaosNauts" width="2163" height="727" fetchpriority="high" decoding="async" /></div>
+                    <h1>{{heroLine}}</h1>
+                </div>
+                <figure id="trailer" class="trailer">
+                    <div class="video-frame"><iframe src="https://www.youtube.com/embed/OFNkOkT-kwQ?rel=0" title="{{videoTitle}}" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+                </figure>
+                <a class="btn btn-primary hero-join" href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">{{heroJoin}} <span aria-hidden="true">↗</span></a>
+            </div>
+        </header>
+        <section id="about" class="game-section container" aria-labelledby="game-heading">
+            <div class="section-head"><div><p class="eyebrow">{{missionLabel}}</p><h2 id="game-heading">{{missionTitle}}</h2></div><p>{{missionText}}</p></div>
+            <div class="visual-grid">
+                <article class="visual-card">
+                    <a class="visual-image workshop" href="/images/albert-workshop.webp" target="_blank" rel="noopener noreferrer" aria-label="{{workshopLink}}"><img src="/images/albert-workshop.webp" alt="{{workshopAlt}}" width="1122" height="1402" loading="lazy" decoding="async" /><span class="image-label">{{conceptLabel}}</span></a>
+                    <div class="visual-copy"><span class="chapter" aria-hidden="true">01 / {{assemblyLabel}}</span><h3>{{buildTitle}}</h3><p>{{buildText}}</p></div>
+                </article>
+                <article class="visual-card">
+                    <a class="visual-image" href="/images/space-gouache.png" target="_blank" rel="noopener noreferrer" aria-label="{{spaceLink}}"><img src="/images/space-gouache.png" alt="{{spaceAlt}}" width="1113" height="617" loading="lazy" decoding="async" /><span class="image-label">{{previewLabel}}</span></a>
+                    <div class="visual-copy"><span class="chapter" aria-hidden="true">02 / {{exploreLabel}}</span><h3>{{exploreTitle}}</h3><p>{{exploreText}}</p></div>
+                </article>
+                <article class="visual-card">
+                    <a class="visual-image launch-site" href="/images/launch-site-gouache.png" target="_blank" rel="noopener noreferrer" aria-label="{{coopLink}}"><img src="/images/launch-site-gouache.png" alt="{{coopAlt}}" width="1578" height="997" loading="lazy" decoding="async" /><span class="image-label">{{conceptLabel}}</span></a>
+                    <div class="visual-copy"><span class="chapter" aria-hidden="true">03 / {{coopLabel}}</span><h3>{{coopTitle}}</h3><p>{{coopText}}</p></div>
+                </article>
+            </div>
+        </section>
+        <section id="faq" class="faq-section container" aria-labelledby="faq-heading">
+            <div class="section-head"><div><p class="eyebrow">{{faqEyebrow}}</p><h2 id="faq-heading">{{faqTitle}}</h2></div></div>
+            <div class="faq-list">
+                <details><summary>{{question1}}</summary><p>{{answer1}}</p></details>
+                <details><summary>{{question2}}</summary><p>{{answer2}}</p></details>
+                <details><summary>{{question3}}</summary><p>{{answer3}}</p></details>
+            </div>
+        </section>
+        <section id="community" class="community-section container" aria-labelledby="community-heading">
+            <div class="community-card"><p class="eyebrow">{{communityEyebrow}}</p><h2 id="community-heading">{{communityTitle}}</h2><p>{{communityText}}</p>
+                <div class="hero-actions"><a class="btn btn-primary" href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">{{discord}} <span aria-hidden="true">↗</span></a><a class="btn btn-secondary" href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">{{instagram}}</a></div>
+            </div>
+        </section>
+    </main>
+    <footer class="container footer-inner"><p>© <span id="year"></span> KaosNauts</p><div class="socials"><a href="https://discord.gg/JaSSQKtMgM" target="_blank" rel="noopener noreferrer">Discord ↗</a><a href="https://www.instagram.com/kaosnauts" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></footer>
+    <nav class="container footer-languages" aria-label="{{languageLabel}}">{{languageLinks}}</nav>
+    <script src="/main.js?v=i18n-20261017"></script>
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Publish the generated pages and assets, keeping authoring sources out of Pages.
+exclude:
+  - site
+  - scripts
+  - README.md
